@@ -37,8 +37,21 @@ var genComb = function(x){
 							threeScore: chinese[4+mp.get(threeCode)],
 							three: ''+elementChineseArr[x]+elementChineseArr[x+i-1]+elementChineseArr[i+j-1],
 							score:arr[x+i+j-1]+arr[x]+arr[x+i-1]+arr[i+j-1]+arr[j]+mp.get(threeCode)
+				};
+
+				if(
+					human > (arr[x+i-1])||
+					floor > (arr[i+j-1])||
+					out > (arr[j])||
+					total > (arr[x+i+j-1])||
+					threeScore > (mp.get(threeCode))||
+					middle < i ||
+					last < j
+					){
+				}else{
+					newArr.push(obj)
 				}
-				newArr.push(obj)
+				
 
 			}
 		} 
@@ -48,15 +61,30 @@ var genComb = function(x){
 
 var appen = function() {
 	$("#table").empty()
-	$( "<tr><th>中字筆畫</th><th>尾字筆畫</th><th>天格</th><th>人格</th><th>地格</th><th>外格</th><th>總格</th><th>三才</th><th>三才吉凶</th></tr>" ).appendTo( "#table" );
+	$(tableHTML).appendTo( "#table" );
 	for (var i = 0; i < newArr.length; i++) {
 		$( "<tr><td><a href='http://tool.httpcn.com/KangXi/So.asp?tid=3&wd="+newArr[i].middle+"&cy=1'>"+ newArr[i].middle+"</a></td><td><a href='http://tool.httpcn.com/KangXi/So.asp?tid=3&wd="+newArr[i].last+"&cy=1'>"+newArr[i].last+"</td><td>"+newArr[i].sky+"</td><td>"+newArr[i].human+"</td><td>"+newArr[i].floor+"</td><td>"+newArr[i].out+"</td><td>"+newArr[i].total+"</td><td>"+newArr[i].three+"</td><td>"+newArr[i].threeScore+"</td></tr>" ).appendTo( "#table" );
 	}
 };
 
+ var middle;
+ var last;
+ var human;
+ var floor;
+ var out;
+ var total;
+ var threeScore;
+ var tableHTML = $("#table").html() 
 
 $("#check").click(function() {
 	var first = parseInt($("#first").val());
+	middle = parseInt($("#middle").val());
+ 	last = parseInt($("#last").val());
+	human = parseInt($("#human").val());
+	floor = parseInt($("#floor").val());
+	out = parseInt($("#out").val());
+	total = parseInt($("#total").val());
+	threeScore = parseInt($("#threeScore").val());
   	genComb(first)
 	newArr.sort( compare );
 	appen();

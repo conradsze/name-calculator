@@ -9,21 +9,84 @@
 
 </head>
 <body>
-<h3>請輸入姓氏筆畫數字</h3>
+<h3>請輸入姓氏筆畫數目</h3>
 <input type="number" name="" id="first">
 <button id= "check" >check</button>
 <div>
 	<table id="table">
-<!--   <tr>
-    <th>中字</th>
-    <th>尾字</th>
-    <th>天格</th>
-    <th>人格</th>
-    <th>地格</th>
-    <th>外格</th>
-    <th>總格</th>
-  </tr>
- --></table>
+    <tr>
+      <th>中字筆畫數目
+      <br>
+      <input type="number" placeholder="設置最多筆畫" id="middle">
+      </th>
+      <th>尾字筆畫數目
+      <br>
+      <input type="number" placeholder="設置最多筆畫" id="last">
+      </th>
+      <th>天格</th>
+      <th>人格
+      <br>
+        <select id="human">
+          <option value="-4">設置最少吉凶度</option>
+          <option value="-3">凶數</option>
+          <option value="-1">凶多於吉數</option>
+          <option value="0">吉凶難分</option>
+          <option value="1">吉多於凶</option>
+          <option value="2">吉帶凶數</option>
+          <option value="3">吉數</option>
+          <option value="4">大吉數</option>
+        </select></th>
+      <th>地格
+      <br>
+        <select id="floor">
+          <option value="-4">設置最少吉凶度</option>
+          <option value="-3">凶數</option>
+          <option value="-1">凶多於吉數</option>
+          <option value="0">吉凶難分</option>
+          <option value="1">吉多於凶</option>
+          <option value="2">吉帶凶數</option>
+          <option value="3">吉數</option>
+          <option value="4">大吉數</option>
+        </select></th>
+      <th>外格
+      <br>
+        <select id="out">
+          <option value="-4">設置最少吉凶度</option>
+          <option value="-3">凶數</option>
+          <option value="-1">凶多於吉數</option>
+          <option value="0">吉凶難分</option>
+          <option value="1">吉多於凶</option>
+          <option value="2">吉帶凶數</option>
+          <option value="3">吉數</option>
+          <option value="4">大吉數</option>
+        </select></th>
+      <th>總格
+      <br>
+        <select id="total">
+          <option value="-4">設置最少吉凶度</option>
+          <option value="-3">凶數</option>
+          <option value="-1">凶多於吉數</option>
+          <option value="0">吉凶難分</option>
+          <option value="1">吉多於凶</option>
+          <option value="2">吉帶凶數</option>
+          <option value="3">吉數</option>
+          <option value="4">大吉數</option>
+        </select></th>
+      <th>三才</th>
+      <th>三才吉凶
+      <br>
+        <select id="threeScore">
+          <option value="-4">設置最少吉凶度</option>
+          <option value="-3">凶數</option>
+          <option value="-1">凶多於吉數</option>
+          <option value="0">吉凶難分</option>
+          <option value="1">吉多於凶</option>
+          <option value="2">吉帶凶數</option>
+          <option value="3">吉數</option>
+          <option value="4">大吉數</option>
+        </select></th>
+    </tr>
+  </table>
 </div>
 </body>
 <script type="text/javascript" src="app.js"></script>
